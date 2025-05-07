@@ -1,148 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ImageTool Hub</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            margin: 0;
-            padding: 0;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ImageTool Hub</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            text-align: center;
-        }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+    }
 
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-        }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
 
-        .welcome-message {
-            font-size: 1.2em;
-            margin-bottom: 20px;
-        }
+    .welcome-message {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
 
-        .feature-description {
-            font-size: 1.1em;
-            margin-bottom: 10px;
-            color: #555;
-        }
+    .feature-description {
+      font-size: 1.1em;
+      margin-bottom: 10px;
+      color: #555;
+    }
 
-        .tool-link {
-            display: block;
-            padding: 10px;
-            margin: 10px 0;
-            background-color: #007bff;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 1.1em;
-            transition: background-color 0.3s;
-        }
+    .tool-link {
+      display: block;
+      padding: 10px;
+      margin: 10px 0;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 1.1em;
+      transition: background-color 0.3s;
+    }
 
-        .tool-link:hover {
-            background-color: #0056b3;
-        }
+    .tool-link:hover {
+      background-color: #0056b3;
+    }
 
-        .mode-toggle {
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #333;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
+    .mode-toggle {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
 
-        .mode-toggle:hover {
-            background-color: #555;
-        }
+    .mode-toggle:hover {
+      background-color: #555;
+    }
 
-        .dark-mode {
-            background-color: #333;
-            color: white;
-        }
+    .dark-mode {
+      background-color: #333;
+      color: white;
+    }
 
-        .dark-mode .tool-link {
-            background-color: #0056b3;
-        }
+    .dark-mode .tool-link {
+      background-color: #0056b3;
+    }
 
-        .dark-mode .mode-toggle {
-            background-color: #ddd;
-            color: black;
-        }
-    </style>
+    .dark-mode .mode-toggle {
+      background-color: #ddd;
+      color: black;
+    }
+  </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>Welcome to ImageTool Hub</h1>
+  <div class="container">
+    <h1>Welcome to ImageTool Hub</h1>
 
-        <p class="welcome-message">
-            Hello from S M Ripon and Team Accessible Resource.  
-            <span id="timeOfDayMessage"></span>
-            We are excited to have you here! More powerful tools will be added soon. Stay connected!
-        </p>
+    <p class="welcome-message">
+      Hello from S M Ripon and Team Accessible Resource.  
+      <span id="timeOfDayMessage"></span>
+      We are excited to have you here! More powerful tools will be added soon. Stay connected!
+    </p>
 
-        <div>
-            <h2>Our Tools</h2>
-            <div class="feature-description">
-                <p><strong>1. Add Text to Image</strong><br>
-                Add custom text to your images with ease. This tool allows you to personalize your images with stylish text.</p>
-            </div>
-            <a href="https://accessibleresource.github.io/Add-text-to-image/" class="tool-link" target="_blank">Open Add Text to Image</a>
+    <div>
+      <h2>Our Tools</h2>
 
-            <div class="feature-description">
-                <p><strong>2. Smart Image Converter</strong><br>
-                Convert your images into different formats like JPG, PNG, WebP, and more.</p>
-            </div>
-            <a href="https://accessibleresource.github.io/Smart-image-converter/" class="tool-link" target="_blank">Open Smart Image Converter</a>
+      <div class="feature-description">
+        <p><strong>1. Add Text to Image</strong><br>
+        Add custom text to your images with ease. This tool allows you to personalize your images with stylish text.</p>
+      </div>
+      <a href="https://accessibleresource.github.io/Add-text-to-image/" class="tool-link" target="_blank">Open Add Text to Image</a>
 
-            <div class="feature-description">
-                <p><strong>3. Smart Image Compressor</strong><br>
-                Compress your images without losing quality, saving storage space while maintaining image clarity.</p>
-            </div>
-            <a href="https://accessibleresource.github.io/Smart-image-compressor/" class="tool-link" target="_blank">Open Smart Image Compressor</a>
-        </div>
+      <div class="feature-description">
+        <p><strong>2. Smart Image Converter</strong><br>
+        Convert your images into different formats like JPG, PNG, WebP, and more.</p>
+      </div>
+      <a href="https://accessibleresource.github.io/Smart-image-converter/" class="tool-link" target="_blank">Open Smart Image Converter</a>
 
-        <button class="mode-toggle" onclick="toggleDarkLightMode()">Toggle Dark/Light Mode</button>
+      <div class="feature-description">
+        <p><strong>3. Smart Image Compressor</strong><br>
+        Compress your images without losing quality, saving storage space while maintaining image clarity.</p>
+      </div>
+      <a href="https://accessibleresource.github.io/Smart-image-compressor/" class="tool-link" target="_blank">Open Smart Image Compressor</a>
+
+      <div class="feature-description">
+        <p><strong>4. Multiple Image Merger</strong><br>
+        Merge multiple images into one seamlessly. Perfect for creating collages or combining related visuals.</p>
+      </div>
+      <a href="https://accessibleresource.github.io/Image-Merger/" class="tool-link" target="_blank">Open Multiple Image Merger</a>
     </div>
 
-    <script>
-        // Function to change the time-based welcome message
-        function updateTimeOfDayMessage() {
-            const hours = new Date().getHours();
-            let message = "";
-            
-            if (hours < 12) {
-                message = "Good Morning";
-            } else if (hours < 18) {
-                message = "Good Afternoon";
-            } else {
-                message = "Good Evening";
-            }
+    <button class="mode-toggle" onclick="toggleDarkLightMode()">Toggle Dark/Light Mode</button>
+  </div>
 
-            document.getElementById('timeOfDayMessage').innerText = message;
-        }
+  <script>
+    // Function to change the time-based welcome message
+    function updateTimeOfDayMessage() {
+      const hours = new Date().getHours();
+      let message = "";
+      
+      if (hours < 12) {
+        message = "Good Morning";
+      } else if (hours < 18) {
+        message = "Good Afternoon";
+      } else {
+        message = "Good Evening";
+      }
 
-        // Function to toggle between dark and light modes
-        function toggleDarkLightMode() {
-            document.body.classList.toggle('dark-mode');
-        }
+      document.getElementById('timeOfDayMessage').innerText = message;
+    }
 
-        // Initialize the time-based message
-        updateTimeOfDayMessage();
-    </script>
+    // Function to toggle between dark and light modes
+    function toggleDarkLightMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+
+    // Initialize the time-based message
+    updateTimeOfDayMessage();
+  </script>
 
 </body>
 </html>
