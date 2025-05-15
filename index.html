@@ -5,151 +5,209 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ImageTool Hub</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      color: #333;
+    :root {
+      --primary: #007bff;
+      --bg-light: #f9f9f9;
+      --bg-dark: #121212;
+      --text-dark: #1a1a1a;
+      --text-light: #f0f0f0;
+      --card-bg-light: #ffffff;
+      --card-bg-dark: #1e1e1e;
+      --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--bg-light);
+      color: var(--text-dark);
+      transition: background 0.4s ease, color 0.4s ease;
       padding: 20px;
-      text-align: center;
-    }
-
-    h1 {
-      font-size: 2.5em;
-      margin-bottom: 20px;
-    }
-
-    .welcome-message {
-      font-size: 1.2em;
-      margin-bottom: 20px;
-    }
-
-    .feature-description {
-      font-size: 1.1em;
-      margin-bottom: 10px;
-      color: #555;
-    }
-
-    .tool-link {
-      display: block;
-      padding: 10px;
-      margin: 10px 0;
-      background-color: #007bff;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      font-size: 1.1em;
-      transition: background-color 0.3s;
-    }
-
-    .tool-link:hover {
-      background-color: #0056b3;
-    }
-
-    .mode-toggle {
-      margin-top: 20px;
-      padding: 10px 20px;
-      background-color: #333;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    .mode-toggle:hover {
-      background-color: #555;
     }
 
     .dark-mode {
-      background-color: #333;
+      background: var(--bg-dark);
+      color: var(--text-light);
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      text-align: center;
+      margin-bottom: 10px;
+      color: var(--primary);
+      animation: fadeInDown 1s ease-out;
+    }
+
+    .slogan {
+      text-align: center;
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      font-weight: 600;
+      color: var(--primary);
+      animation: fadeIn 1.5s ease-out;
+    }
+
+    .welcome {
+      text-align: center;
+      font-size: 1rem;
+      margin-bottom: 30px;
+      animation: fadeInUp 1.5s ease-out;
+    }
+
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: auto;
+      animation: fadeIn 2s ease-out;
+    }
+
+    .tool-card {
+      background: var(--card-bg-light);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s ease, background 0.4s ease;
+    }
+
+    .dark-mode .tool-card {
+      background: var(--card-bg-dark);
+    }
+
+    .tool-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .tool-card h2 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .tool-card p {
+      font-size: 0.95rem;
+      margin-bottom: 15px;
+    }
+
+    .tool-card a {
+      display: inline-block;
+      background: var(--primary);
       color: white;
+      padding: 10px 18px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.3s;
     }
 
-    .dark-mode .tool-link {
-      background-color: #0056b3;
+    .tool-card a:hover {
+      background: #0056b3;
     }
 
-    .dark-mode .mode-toggle {
-      background-color: #ddd;
-      color: black;
+    .toggle-btn {
+      display: block;
+      margin: 40px auto 0;
+      padding: 12px 24px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .toggle-btn:hover {
+      background: #0056b3;
+      transform: scale(1.05);
+    }
+
+    .dark-mode .toggle-btn {
+      background: #00aaff;
+      color: #000;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <h1>Welcome to ImageTool Hub</h1>
+  <div class="slogan">🎉 Realizing Dreams Through the Touch of Technology</div>
+  <h1>Welcome to ImageTool Hub</h1>
+  <p class="welcome">Hello from S M Ripon and Team Accessible Resource.<br><span id="timeOfDayMessage"></span></p>
 
-    <p class="welcome-message">
-      Hello from S M Ripon and Team Accessible Resource.  
-      <span id="timeOfDayMessage"></span>
-      We are excited to have you here! More powerful tools will be added soon. Stay connected!
-    </p>
+  <div class="tools-grid">
 
-    <div>
-      <h2>Our Tools</h2>
-
-      <div class="feature-description">
-        <p><strong>1. Add Text to Image</strong><br>
-        Add custom text to your images with ease. This tool allows you to personalize your images with stylish text.</p>
-      </div>
-      <a href="https://accessibleresource.github.io/Add-text-to-image/" class="tool-link" target="_blank">Open Add Text to Image</a>
-
-      <div class="feature-description">
-        <p><strong>2. Smart Image Converter</strong><br>
-        Convert your images into different formats like JPG, PNG, WebP, and more.</p>
-      </div>
-      <a href="https://accessibleresource.github.io/Smart-image-converter/" class="tool-link" target="_blank">Open Smart Image Converter</a>
-
-      <div class="feature-description">
-        <p><strong>3. Smart Image Compressor</strong><br>
-        Compress your images without losing quality, saving storage space while maintaining image clarity.</p>
-      </div>
-      <a href="https://accessibleresource.github.io/Smart-image-compressor/" class="tool-link" target="_blank">Open Smart Image Compressor</a>
-
-      <div class="feature-description">
-        <p><strong>4. Multiple Image Merger</strong><br>
-        Merge multiple images into one seamlessly. Perfect for creating collages or combining related visuals.</p>
-      </div>
-      <a href="https://accessibleresource.github.io/Image-Merger/" class="tool-link" target="_blank">Open Multiple Image Merger</a>
+    <div class="tool-card">
+      <h2>1. Photo Analyser</h2>
+      <p>Analyse image metadata and properties in a smart, clean interface.</p>
+      <a href="https://accessibleresource.github.io/photo-analyser.-/" target="_blank">Open Tool</a>
     </div>
 
-    <button class="mode-toggle" onclick="toggleDarkLightMode()">Toggle Dark/Light Mode</button>
+    <div class="tool-card">
+      <h2>2. Image Resizer</h2>
+      <p>Resize your images to exact dimensions quickly and easily.</p>
+      <a href="https://accessibleresource.github.io/Image-resizer./" target="_blank">Open Tool</a>
+    </div>
+
+    <div class="tool-card">
+      <h2>3. Add Text to Image</h2>
+      <p>Personalize your images with stylish custom text overlays.</p>
+      <a href="https://accessibleresource.github.io/Add-text-to-image/" target="_blank">Open Tool</a>
+    </div>
+
+    <div class="tool-card">
+      <h2>4. Smart Image Converter</h2>
+      <p>Convert images to JPG, PNG, WebP and more formats easily.</p>
+      <a href="https://accessibleresource.github.io/Smart-image-converter/" target="_blank">Open Tool</a>
+    </div>
+
+    <div class="tool-card">
+      <h2>5. Smart Image Compressor</h2>
+      <p>Reduce image file sizes without compromising quality.</p>
+      <a href="https://accessibleresource.github.io/Smart-image-compressor/" target="_blank">Open Tool</a>
+    </div>
+
+    <div class="tool-card">
+      <h2>6. Multiple Image Merger</h2>
+      <p>Merge multiple images into a single well-aligned result.</p>
+      <a href="https://accessibleresource.github.io/Image-Merger/" target="_blank">Open Tool</a>
+    </div>
+
   </div>
 
+  <button class="toggle-btn" onclick="toggleMode()">Toggle Dark/Light Mode</button>
+
   <script>
-    // Function to change the time-based welcome message
-    function updateTimeOfDayMessage() {
-      const hours = new Date().getHours();
-      let message = "";
-      
-      if (hours < 12) {
-        message = "Good Morning";
-      } else if (hours < 18) {
-        message = "Good Afternoon";
-      } else {
-        message = "Good Evening";
-      }
-
-      document.getElementById('timeOfDayMessage').innerText = message;
+    function toggleMode() {
+      document.body.classList.toggle("dark-mode");
     }
 
-    // Function to toggle between dark and light modes
-    function toggleDarkLightMode() {
-      document.body.classList.toggle('dark-mode');
+    function updateGreeting() {
+      const hour = new Date().getHours();
+      const msg = hour < 12 ? "Good Morning!" : hour < 17 ? "Good Afternoon!" : "Good Evening!";
+      document.getElementById("timeOfDayMessage").textContent = msg;
     }
 
-    // Initialize the time-based message
-    updateTimeOfDayMessage();
+    updateGreeting();
   </script>
-
 </body>
 </html>
