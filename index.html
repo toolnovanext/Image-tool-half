@@ -35,28 +35,74 @@
       color: var(--text-light);
     }
 
-    h1 {
-      font-size: 2.4rem;
+    .header {
       text-align: center;
-      margin-bottom: 10px;
-      color: var(--primary);
-      animation: fadeInDown 1s ease-out;
-    }
-
-    .slogan {
-      text-align: center;
-      font-size: 1.2rem;
       margin-bottom: 20px;
-      font-weight: 600;
-      color: var(--primary);
-      animation: fadeIn 1.5s ease-out;
     }
 
-    .welcome {
+    .header h1 {
+      font-size: 2.2rem;
+      color: var(--primary);
+    }
+
+    .header .slogan {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-top: 10px;
+    }
+
+    .tag-bar {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin: 20px 0;
+    }
+
+    .tag-bar button {
+      padding: 10px 16px;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .dark-mode .tag-bar button {
+      background: #00aaff;
+      color: #000;
+    }
+
+    .links {
       text-align: center;
+      margin: 20px 0;
+    }
+
+    .links a {
+      background: var(--primary);
+      color: white;
+      padding: 10px 15px;
+      margin: 0 10px;
+      border-radius: 6px;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 0.95rem;
+    }
+
+    .dark-mode .links a {
+      background: #00aaff;
+      color: black;
+    }
+
+    #searchInput {
+      display: block;
+      margin: 0 auto 25px auto;
+      padding: 10px;
+      width: 90%;
+      max-width: 400px;
+      border: 2px solid var(--primary);
+      border-radius: 8px;
       font-size: 1rem;
-      margin-bottom: 30px;
-      animation: fadeInUp 1.5s ease-out;
     }
 
     .tools-grid {
@@ -65,7 +111,6 @@
       gap: 20px;
       max-width: 1000px;
       margin: auto;
-      animation: fadeIn 2s ease-out;
     }
 
     .tool-card {
@@ -85,7 +130,7 @@
     }
 
     .tool-card h2 {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       margin-bottom: 10px;
     }
 
@@ -101,113 +146,103 @@
       padding: 10px 18px;
       border-radius: 6px;
       text-decoration: none;
-      transition: background 0.3s;
     }
 
     .tool-card a:hover {
       background: #0056b3;
     }
 
-    .toggle-btn {
-      display: block;
-      margin: 40px auto 0;
-      padding: 12px 24px;
-      background: var(--primary);
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background 0.3s, transform 0.2s;
-    }
-
-    .toggle-btn:hover {
-      background: #0056b3;
-      transform: scale(1.05);
-    }
-
-    .dark-mode .toggle-btn {
-      background: #00aaff;
-      color: #000;
-    }
-
-    /* Animations */
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
+    .dark-mode .tool-card a:hover {
+      background: #007bff;
     }
   </style>
 </head>
 <body>
 
-  <div class="slogan">🎉 Realizing Dreams Through the Touch of Technology</div>
-  <h1>Welcome to ImageTool Hub</h1>
-  <p class="welcome">Hello from S M Ripon and Team Accessible Resource.<br><span id="timeOfDayMessage"></span></p>
+  <div class="header">
+    <h1>Welcome to ImageTool Hub</h1>
+    <p class="slogan">🎉 Realizing Dreams Through the Touch of Technology</p>
+  </div>
 
-  <div class="tools-grid">
+  <div class="tag-bar">
+    <button onclick="toggleMode()">🔄 Toggle Theme</button>
+    <button onclick="window.open('https://youtube.com/@accessibleresource?si=LGhrnQDGHw-BTroD')">YouTube</button>
+    <button onclick="window.open('https://t.me/shopnotamal')">Telegram</button>
+  </div>
 
+  <div class="links">
+    <a href="https://youtube.com/@accessibleresource?si=LGhrnQDGHw-BTroD" target="_blank">📱 YouTube Channel</a>
+    <a href="https://t.me/shopnotamal" target="_blank">📱 Telegram Channel</a>
+  </div>
+
+  <input type="text" id="searchInput" placeholder="🔍 Search tools..." onkeyup="filterTools()"/>
+
+  <div class="tools-grid" id="toolContainer">
+
+    <!-- Tool 1 -->
     <div class="tool-card">
-      <h2>1. Photo Analyser</h2>
-      <p>Analyse image metadata and properties in a smart, clean interface.</p>
+      <h2>✨ 1. Text to Image Generator</h2>
+      <p>Generate images from your thoughts and text prompts.</p>
+      <a href="https://accessibleresource.github.io/Text-to-image-generator/" target="_blank">Open Tool</a>
+    </div>
+
+    <!-- Tool 2 -->
+    <div class="tool-card">
+      <h2>✨ 2. Photo Analyser</h2>
+      <p>Analyse and understand image data smartly.</p>
       <a href="https://accessibleresource.github.io/photo-analyser.-/" target="_blank">Open Tool</a>
     </div>
 
+    <!-- Tool 3 -->
     <div class="tool-card">
-      <h2>2. Image Resizer</h2>
-      <p>Resize your images to exact dimensions quickly and easily.</p>
-      <a href="https://accessibleresource.github.io/Image-resizer./" target="_blank">Open Tool</a>
-    </div>
-
-    <div class="tool-card">
-      <h2>3. Add Text to Image</h2>
-      <p>Personalize your images with stylish custom text overlays.</p>
-      <a href="https://accessibleresource.github.io/Add-text-to-image/" target="_blank">Open Tool</a>
-    </div>
-
-    <div class="tool-card">
-      <h2>4. Smart Image Converter</h2>
-      <p>Convert images to JPG, PNG, WebP and more formats easily.</p>
+      <h2>✨ 3. Smart Image Converter</h2>
+      <p>Convert JPG, PNG, WebP and more formats easily.</p>
       <a href="https://accessibleresource.github.io/Smart-image-converter/" target="_blank">Open Tool</a>
     </div>
 
+    <!-- Tool 4 -->
     <div class="tool-card">
-      <h2>5. Smart Image Compressor</h2>
-      <p>Reduce image file sizes without compromising quality.</p>
+      <h2>✨ 4. Image Resizer</h2>
+      <p>Resize your images to any dimension in seconds.</p>
+      <a href="https://accessibleresource.github.io/Image-resizer./" target="_blank">Open Tool</a>
+    </div>
+
+    <!-- Tool 5 -->
+    <div class="tool-card">
+      <h2>✨ 5. Add Text to Image</h2>
+      <p>Place stylish text on your favorite images with ease.</p>
+      <a href="https://accessibleresource.github.io/Add-text-to-image/" target="_blank">Open Tool</a>
+    </div>
+
+    <!-- Tool 6 -->
+    <div class="tool-card">
+      <h2>✨ 6. Smart Image Compressor</h2>
+      <p>Compress images to smaller sizes without quality loss.</p>
       <a href="https://accessibleresource.github.io/Smart-image-compressor/" target="_blank">Open Tool</a>
     </div>
 
+    <!-- Tool 7 -->
     <div class="tool-card">
-      <h2>6. Multiple Image Merger</h2>
-      <p>Merge multiple images into a single well-aligned result.</p>
+      <h2>✨ 7. Multiple Image Merger</h2>
+      <p>Merge multiple images into a single frame smoothly.</p>
       <a href="https://accessibleresource.github.io/Image-Merger/" target="_blank">Open Tool</a>
     </div>
 
   </div>
-
-  <button class="toggle-btn" onclick="toggleMode()">Toggle Dark/Light Mode</button>
 
   <script>
     function toggleMode() {
       document.body.classList.toggle("dark-mode");
     }
 
-    function updateGreeting() {
-      const hour = new Date().getHours();
-      const msg = hour < 12 ? "Good Morning!" : hour < 17 ? "Good Afternoon!" : "Good Evening!";
-      document.getElementById("timeOfDayMessage").textContent = msg;
+    function filterTools() {
+      const input = document.getElementById("searchInput").value.toLowerCase();
+      const tools = document.querySelectorAll(".tool-card");
+      tools.forEach(tool => {
+        const text = tool.innerText.toLowerCase();
+        tool.style.display = text.includes(input) ? "block" : "none";
+      });
     }
-
-    updateGreeting();
   </script>
 </body>
 </html>
